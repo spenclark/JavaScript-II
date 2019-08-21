@@ -82,7 +82,7 @@ getLength(items, function(length) {
      // Pass true to the callback if it is, otherwise pass false.
 
      function contains(arr, searchitem, cb){
-      if (searchitem.includes(arr)) {
+      if (arr.includes(searchitem)) {
          return cb(true);
         }
     else {

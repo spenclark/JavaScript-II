@@ -52,7 +52,7 @@ const runners = [
   { id: 47, first_name: "Vida", last_name: "Tydd", email: "vtydd1a@dropbox.com", shirt_size: "S", company_name: "Quaxo", donation: 55 },
   { id: 48, first_name: "Anderea", last_name: "MacGiolla Pheadair", email: "amacgiollapheadair1b@xing.com", shirt_size: "2XL", company_name: "Kwimbee", donation: 214 },
   { id: 49, first_name: "Bel", last_name: "Alway", email: "balway1c@ow.ly", shirt_size: "S", company_name: "Voolia", donation: 107 },
-  { id: 50, first_name: "Shell", last_name: "Baine", email: "sbaine1d@intel.com", shirt_size: "M", company_name: "Gabtype", donation: 171 },
+  { id: 50, first_name: "Shell", last_name: "Baine", email: ".edu", shirt_size: "M", company_name: "Gabtype", donation: 171 },
 ];
 
 // ==== Challenge 1: Use .forEach() ====
@@ -69,7 +69,7 @@ console.log(fullNames);
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 
-let firstNamesAllCaps = runners.map(runners =>{ return runners.first_name.toUpperCase()});
+let firstNamesAllCaps = runners.map(runners =>runners.first_name.toUpperCase());
 
 console.log(firstNamesAllCaps);
 
@@ -87,18 +87,14 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1 Student discount - filter all runners with a .edu email
-let emaillist = [];
+let emaillist = runners.filter( runners => runners.email.includes(".edu"));
 
-runners.forEach(function(name){
-    return emaillist.push(`${name.email}`)
-});
-// need help with if statement
-// let studentdiscount = [];
-
-// emaillist.forEach(function(search){
-//   if ()
-//   return studentdiscount.push();
+// runners.forEach(function(name){
+//     // if (name.email.(".edu"))
+//     return emaillist.push(`${name.email}`)
 // });
+
+
 
 console.log(emaillist)
 // Problem 2
