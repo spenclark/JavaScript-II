@@ -7,7 +7,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   // GIVEN THIS PROBLEM:
 
   function firstItem(arr, cb) {
-    // firstItem passes the first item of the given array to the callback function.
+    
   }
 
   // SOLUTION:
@@ -38,32 +38,66 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
+// getLength passes the length of the array into the callback.
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+    return cb(arr.length);
 }
 
-function last(arr, cb) {
+getLength(items, function(length) {
+  return console.log(length);
+});
+
   // last passes the last item of the array into the callback.
-}
 
-function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+  function last(arr, cb) {
+    return cb(arr[arr.length - 1])
+  };
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+  last(items, function(endItem){
+    return console.log(endItem);
+  });
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
-}
+   // sumNums adds two numbers (x, y) and passes the result to the callback.
 
-/* STRETCH PROBLEM */
+   function sumNums(num1, num2 ,cb) {
+     return cb(num1 + num2);
+   }
+
+   sumNums(3, 10, function(summer){
+    return console.log(summer);
+   });
+
+     // multiplyNums multiplies two numbers and passes the result to the callback.
+
+     function mutliplyNums(x, y, cb){
+       return cb(x * y);
+     }
+
+     mutliplyNums(10,11, function(multi){
+        return console.log(multi)
+     });
+
+      // contains checks if an item is present inside of the given array/list.
+     // Pass true to the callback if it is, otherwise pass false.
+
+     function contains(arr, searchitem, cb){
+      if (arr.includes(searchitem)) {
+         return cb(true);
+        }
+    else {
+          return cb(false);
+        }
+     }
+
+     contains(items, 'Gum', function(search){
+        return console.log(search)
+     });
+
+
+
+     /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
-}
+ 
+};
